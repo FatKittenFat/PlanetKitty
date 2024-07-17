@@ -78,9 +78,33 @@ class ViewController: UIViewController  {
         return textfield
     }()
     
+    private let buttonLogin: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        button.setTitle("Entrar", for: .normal)
+        button.layer.cornerRadius = 15.0
+        button.addTarget(self, action: #selector(toLogin), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
+    private let registerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No tienes cuenta?"
+        label.font = UIFont(name: "Futura", size: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    
+    private let buttonRegister: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .lightGray
+        button.setTitle("Registrarse", for: .normal)
+        button.layer.cornerRadius = 15.0
+        button.addTarget(self, action: #selector(toRegister), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +115,9 @@ class ViewController: UIViewController  {
         view.addSubview(planetImage)
         view.addSubview(userTextField)
         view.addSubview(passwordTextField)
+        view.addSubview(buttonLogin)
+        view.addSubview(registerLabel)
+        view.addSubview(buttonRegister)
         
         homeConstraints()
         
@@ -120,13 +147,32 @@ class ViewController: UIViewController  {
             userTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
             userTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            passwordTextField.topAnchor.constraint(equalTo: userTextField.bottomAnchor, constant: 30),
+            passwordTextField.topAnchor.constraint(equalTo: userTextField.bottomAnchor, constant: 20),
             passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
             passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 40)
-        
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            buttonLogin.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            buttonLogin.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            buttonLogin.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
+            
+            registerLabel.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 10),
+            registerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            buttonRegister.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 10),
+            buttonRegister.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            buttonRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
         ])
         
+    }
+    
+    @objc func toLogin(){
+        print("button login pressed")
+    }
+    
+    @objc func toRegister(){
+        print("button register pressed")
+        present(RegisterViewController(), animated: true)
     }
 
 
