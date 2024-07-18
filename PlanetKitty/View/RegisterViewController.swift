@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     
@@ -96,7 +98,47 @@ class RegisterViewController: UIViewController {
         return textfield
     }()
     
-
+    private let emailTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "  Email"
+        textfield.borderStyle = .none
+        textfield.layer.cornerRadius = 15.0
+        textfield.backgroundColor = .white
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        return textfield
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "  Contraseña"
+        textfield.borderStyle = .none
+        textfield.isSecureTextEntry = true
+        textfield.layer.cornerRadius = 15.0
+        textfield.backgroundColor = .white
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        return textfield
+    }()
+    
+    private let rep_passwordTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "  Repetir Contraseña"
+        textfield.borderStyle = .none
+        textfield.isSecureTextEntry = true
+        textfield.layer.cornerRadius = 15.0
+        textfield.backgroundColor = .white
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        return textfield
+    }()
+    
+    private let buttonRegisterPerson: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        button.setTitle("Entrar", for: .normal)
+        button.layer.cornerRadius = 15.0
+        button.addTarget(self, action: #selector(registerPerson), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +147,9 @@ class RegisterViewController: UIViewController {
         lastNameFTextField.delegate = self
         lastNameMTextField.delegate = self
         countryTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        rep_passwordTextField.delegate = self
         
         view.addSubview(background)
         view.addSubview(tittleLabel)
@@ -113,6 +158,10 @@ class RegisterViewController: UIViewController {
         view.addSubview(lastNameMTextField)
         view.addSubview(dateTextField)
         view.addSubview(countryTextField)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(rep_passwordTextField)
+        view.addSubview(buttonRegisterPerson)
         
         registerConstaints()
         
@@ -131,7 +180,7 @@ class RegisterViewController: UIViewController {
             tittleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
             
             
-            nameTextField.topAnchor.constraint(equalTo: tittleLabel.bottomAnchor, constant: 60),
+            nameTextField.topAnchor.constraint(equalTo: tittleLabel.bottomAnchor, constant: 30),
             nameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
             nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
             nameTextField.heightAnchor.constraint(equalToConstant: 40),
@@ -156,6 +205,24 @@ class RegisterViewController: UIViewController {
             countryTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
             countryTextField.heightAnchor.constraint(equalToConstant: 40),
             
+            emailTextField.topAnchor.constraint(equalTo: countryTextField.bottomAnchor, constant: 10),
+            emailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            emailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
+            emailTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
+            passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            rep_passwordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
+            rep_passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            rep_passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
+            rep_passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            buttonRegisterPerson.topAnchor.constraint(equalTo: rep_passwordTextField.bottomAnchor, constant: 30),
+            buttonRegisterPerson.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60),
+            buttonRegisterPerson.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60),
             
         ])
     }
@@ -170,6 +237,14 @@ class RegisterViewController: UIViewController {
     
     @objc func doneButtonF (){
         dateTextField.resignFirstResponder()
+    }
+    
+    @objc func registerPerson(){
+        let email = emailTextField.text
+        let pass = passwordTextField.text
+       // Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>){}
+        dismiss(animated: true)
+        print("persona registrada!")
     }
     
 }

@@ -65,6 +65,7 @@ class ViewController: UIViewController  {
         textfield.placeholder = "  contraseña"
         textfield.borderStyle = .none
         textfield.layer.cornerRadius = 15.0
+        textfield.isSecureTextEntry = true
         textfield.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
         let leftViewMode = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         textfield.leftView = leftViewMode

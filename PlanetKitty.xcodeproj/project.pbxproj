@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131F38972C4864FD006113A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 131F38962C4864FD006113A0 /* GoogleService-Info.plist */; };
 		138DF06A2C4713700025092F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DF0692C4713700025092F /* RegisterViewController.swift */; };
 		13D4109E2C462D4E003369FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D4109D2C462D4E003369FA /* AppDelegate.swift */; };
 		13D410A02C462D4E003369FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D4109F2C462D4E003369FA /* SceneDelegate.swift */; };
@@ -14,9 +15,11 @@
 		13D410A52C462D4E003369FA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 13D410A42C462D4E003369FA /* Base */; };
 		13D410A72C462D51003369FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D410A62C462D51003369FA /* Assets.xcassets */; };
 		13D410AA2C462D51003369FA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 13D410A92C462D51003369FA /* Base */; };
+		5ADBC295957209EC615B1C7A /* Pods_PlanetKitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B45566E3C7355CCE0D982A /* Pods_PlanetKitty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131F38962C4864FD006113A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		138DF0692C4713700025092F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		13D4109A2C462D4E003369FA /* PlanetKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D4109D2C462D4E003369FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		13D410A62C462D51003369FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D410A92C462D51003369FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D410AB2C462D51003369FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319D33D1ABB0DF8BD1D02E64 /* Pods-PlanetKitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetKitty.debug.xcconfig"; path = "Target Support Files/Pods-PlanetKitty/Pods-PlanetKitty.debug.xcconfig"; sourceTree = "<group>"; };
+		6A3EBE26A03445040937E6E1 /* Pods-PlanetKitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetKitty.release.xcconfig"; path = "Target Support Files/Pods-PlanetKitty/Pods-PlanetKitty.release.xcconfig"; sourceTree = "<group>"; };
+		71B45566E3C7355CCE0D982A /* Pods_PlanetKitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanetKitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ADBC295957209EC615B1C7A /* Pods_PlanetKitty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0601C2734B32DEB175CF34F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				319D33D1ABB0DF8BD1D02E64 /* Pods-PlanetKitty.debug.xcconfig */,
+				6A3EBE26A03445040937E6E1 /* Pods-PlanetKitty.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		13D410912C462D4E003369FA = {
 			isa = PBXGroup;
 			children = (
 				13D4109C2C462D4E003369FA /* PlanetKitty */,
 				13D4109B2C462D4E003369FA /* Products */,
+				0601C2734B32DEB175CF34F0 /* Pods */,
+				FB193D92EDF2FC9EFF70D61E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +85,7 @@
 				13D410A62C462D51003369FA /* Assets.xcassets */,
 				13D410A82C462D51003369FA /* LaunchScreen.storyboard */,
 				13D410AB2C462D51003369FA /* Info.plist */,
+				131F38962C4864FD006113A0 /* GoogleService-Info.plist */,
 			);
 			path = PlanetKitty;
 			sourceTree = "<group>";
@@ -94,6 +113,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FB193D92EDF2FC9EFF70D61E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71B45566E3C7355CCE0D982A /* Pods_PlanetKitty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13D410AE2C462D51003369FA /* Build configuration list for PBXNativeTarget "PlanetKitty" */;
 			buildPhases = (
+				592D145DF72109F6CD821876 /* [CP] Check Pods Manifest.lock */,
 				13D410962C462D4E003369FA /* Sources */,
 				13D410972C462D4E003369FA /* Frameworks */,
 				13D410982C462D4E003369FA /* Resources */,
+				54F5C86190F8D0D47A973F27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,12 +182,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D410A72C462D51003369FA /* Assets.xcassets in Resources */,
+				131F38972C4864FD006113A0 /* GoogleService-Info.plist in Resources */,
 				13D410AA2C462D51003369FA /* Base in Resources */,
 				13D410A52C462D4E003369FA /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54F5C86190F8D0D47A973F27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanetKitty/Pods-PlanetKitty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanetKitty/Pods-PlanetKitty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanetKitty/Pods-PlanetKitty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		592D145DF72109F6CD821876 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanetKitty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13D410962C462D4E003369FA /* Sources */ = {
@@ -315,12 +387,14 @@
 		};
 		13D410AF2C462D51003369FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319D33D1ABB0DF8BD1D02E64 /* Pods-PlanetKitty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FSL33W7H9S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlanetKitty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -343,12 +417,14 @@
 		};
 		13D410B02C462D51003369FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3EBE26A03445040937E6E1 /* Pods-PlanetKitty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FSL33W7H9S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlanetKitty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
